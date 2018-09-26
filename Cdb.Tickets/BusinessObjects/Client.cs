@@ -9,7 +9,7 @@ namespace Cdb.Tickets.BusinessObjects
 {
     [DefaultClassOptions]
     [DefaultProperty("Company")]
-    public class Client : BaseObject, IPerson
+    public class Client : XPObject, IPerson
     {
         public Client(Session session) : base(session)
         { }

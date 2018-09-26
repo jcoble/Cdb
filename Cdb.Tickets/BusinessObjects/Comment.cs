@@ -9,7 +9,7 @@ namespace Cdb.Tickets.BusinessObjects
 {
     [DefaultClassOptions]
     [DefaultProperty("UserComment")]
-    public class Comment : BaseObject
+    public class Comment : XPObject
     {
         public Comment(Session session) : base(session)
         { }

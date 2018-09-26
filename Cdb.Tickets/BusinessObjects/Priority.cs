@@ -9,7 +9,7 @@ namespace Cdb.Tickets.BusinessObjects
 {
     [DefaultClassOptions]
     [DefaultProperty("PriorityName")]
-    public class Priority : BaseObject
+    public class Priority : XPObject
     {
         public Priority(Session session) : base(session) { }
         string priorityName;

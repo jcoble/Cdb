@@ -9,7 +9,7 @@ namespace Cdb.Tickets.BusinessObjects
 {
     [DefaultClassOptions]
     [DefaultProperty("State")]
-    public class TicketState : BaseObject
+    public class TicketState : XPObject
     {
         public TicketState(Session session) : base(session)
         { }

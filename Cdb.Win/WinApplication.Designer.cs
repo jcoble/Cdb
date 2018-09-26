@@ -25,13 +25,14 @@
         private void InitializeComponent() {
             this.module1 = new DevExpress.ExpressApp.SystemModule.SystemModule();
             this.module2 = new DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule();
-            this.module3 = new Cdb.Module.CdbModule();
-            this.module4 = new Cdb.Module.Win.CdbWindowsFormsModule();
             this.securityModule1 = new DevExpress.ExpressApp.Security.SecurityModule();
             this.securityStrategyComplex1 = new DevExpress.ExpressApp.Security.SecurityStrategyComplex();
             this.authenticationStandard1 = new DevExpress.ExpressApp.Security.AuthenticationStandard();
             this.validationModule = new DevExpress.ExpressApp.Validation.ValidationModule();
             this.validationWindowsFormsModule = new DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule();
+            this.cdbModule1 = new Cdb.Module.CdbModule();
+            this.ticketsModule1 = new Cdb.Tickets.TicketsModule();
+            this.cdbWindowsFormsModule1 = new Cdb.Module.Win.CdbWindowsFormsModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // securityStrategyComplex1
@@ -57,10 +58,11 @@
             this.Modules.Add(this.module1);
             this.Modules.Add(this.module2);
             this.Modules.Add(this.validationModule);
-            this.Modules.Add(this.module3);
             this.Modules.Add(this.validationWindowsFormsModule);
-            this.Modules.Add(this.module4);
             this.Modules.Add(this.securityModule1);
+            this.Modules.Add(this.ticketsModule1);
+            this.Modules.Add(this.cdbModule1);
+            this.Modules.Add(this.cdbWindowsFormsModule1);
             this.Security = this.securityStrategyComplex1;
             this.UseOldTemplates = false;
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.CdbWindowsFormsApplication_DatabaseVersionMismatch);
@@ -73,12 +75,15 @@
 
         private DevExpress.ExpressApp.SystemModule.SystemModule module1;
         private DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule module2;
-        private Cdb.Module.CdbModule module3;
-        private Cdb.Module.Win.CdbWindowsFormsModule module4;
+        //private Cdb.Module.CdbModule module3;
+        //private Cdb.Module.Win.CdbWindowsFormsModule module4;
         private DevExpress.ExpressApp.Security.SecurityModule securityModule1;
         private DevExpress.ExpressApp.Security.SecurityStrategyComplex securityStrategyComplex1;
         private DevExpress.ExpressApp.Security.AuthenticationStandard authenticationStandard1;
         private DevExpress.ExpressApp.Validation.ValidationModule validationModule;
         private DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule validationWindowsFormsModule;
+        private Cdb.Module.CdbModule cdbModule1;
+        private Cdb.Tickets.TicketsModule ticketsModule1;
+        private Cdb.Module.Win.CdbWindowsFormsModule cdbWindowsFormsModule1;
     }
 }

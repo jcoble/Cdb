@@ -9,7 +9,7 @@ namespace Cdb.Tickets.BusinessObjects
 {
     [DefaultClassOptions]
     [DefaultProperty("FullName")]
-    public class Person : BaseObject
+    public class Person : XPObject
     {
         public Person(Session session) : base(session)
         { }
@@ -39,31 +39,31 @@ namespace Cdb.Tickets.BusinessObjects
         }
 
 
-        [Association("Person-TicketReporter")]
-        public XPCollection<Ticket> TicketReporter
-        {
-            get
-            {
-                return GetCollection<Ticket>(nameof(TicketReporter));
-            }
-        }
+        //[Association("Person-TicketReporter")]
+        //public XPCollection<Ticket> TicketReporter
+        //{
+        //    get
+        //    {
+        //        return GetCollection<Ticket>(nameof(TicketReporter));
+        //    }
+        //}
 
-        [Association("Person-TicketAssignee")]
-        public XPCollection<Ticket> TicketAssignee
-        {
-            get
-            {
-                return GetCollection<Ticket>(nameof(TicketAssignee));
-            }
-        }
+        //[Association("Person-TicketAssignee")]
+        //public XPCollection<Ticket> TicketAssignee
+        //{
+        //    get
+        //    {
+        //        return GetCollection<Ticket>(nameof(TicketAssignee));
+        //    }
+        //}
 
-        [Association]
-        public XPCollection<Ticket> TicketWatchers
-        {
-            get
-            {
-                return GetCollection<Ticket>(nameof(TicketWatchers));
-            }
-        }
+        //[Association]
+        //public XPCollection<Ticket> TicketWatchers
+        //{
+        //    get
+        //    {
+        //        return GetCollection<Ticket>(nameof(TicketWatchers));
+        //    }
+        //}
     }
 }
