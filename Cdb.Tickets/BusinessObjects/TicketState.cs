@@ -23,7 +23,6 @@ namespace Cdb.Tickets.BusinessObjects
             set => SetPropertyValue(nameof(State), ref state, value);
         }
 
-
         [Association("TicketState-Tickets")]
         public XPCollection<Ticket> Tickets
         {

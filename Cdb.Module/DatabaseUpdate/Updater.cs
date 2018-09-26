@@ -11,6 +11,7 @@ using DevExpress.Xpo;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.BaseImpl.PermissionPolicy;
+using Cdb.Tickets.BusinessObjects;
 
 namespace Cdb.Module.DatabaseUpdate {
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppUpdatingModuleUpdatertopic.aspx
@@ -26,18 +27,18 @@ namespace Cdb.Module.DatabaseUpdate {
             //    theObject = ObjectSpace.CreateObject<DomainObject1>();
             //    theObject.Name = name;
             //}
-            PermissionPolicyUser sampleUser = ObjectSpace.FindObject<PermissionPolicyUser>(new BinaryOperator("UserName", "User"));
+            Tickets.BusinessObjects.User sampleUser = ObjectSpace.FindObject<Tickets.BusinessObjects.User>(new BinaryOperator("UserName", "User"));
             if(sampleUser == null) {
-                sampleUser = ObjectSpace.CreateObject<PermissionPolicyUser>();
+                sampleUser = ObjectSpace.CreateObject<Tickets.BusinessObjects.User>();
                 sampleUser.UserName = "User";
                 sampleUser.SetPassword("");
             }
             PermissionPolicyRole defaultRole = CreateDefaultRole();
             sampleUser.Roles.Add(defaultRole);
 
-            PermissionPolicyUser userAdmin = ObjectSpace.FindObject<PermissionPolicyUser>(new BinaryOperator("UserName", "Admin"));
+            Tickets.BusinessObjects.User userAdmin = ObjectSpace.FindObject<Tickets.BusinessObjects.User>(new BinaryOperator("UserName", "Admin"));
             if(userAdmin == null) {
-                userAdmin = ObjectSpace.CreateObject<PermissionPolicyUser>();
+                userAdmin = ObjectSpace.CreateObject<Tickets.BusinessObjects.User>();
                 userAdmin.UserName = "Admin";
                 // Set a password if the standard authentication type is used
                 userAdmin.SetPassword("");

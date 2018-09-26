@@ -37,33 +37,5 @@ namespace Cdb.Tickets.BusinessObjects
                 return string.Format("{0} {1}", FirstName, LastName);
             }
         }
-
-
-        //[Association("Person-TicketReporter")]
-        //public XPCollection<Ticket> TicketReporter
-        //{
-        //    get
-        //    {
-        //        return GetCollection<Ticket>(nameof(TicketReporter));
-        //    }
-        //}
-
-        //[Association("Person-TicketAssignee")]
-        //public XPCollection<Ticket> TicketAssignee
-        //{
-        //    get
-        //    {
-        //        return GetCollection<Ticket>(nameof(TicketAssignee));
-        //    }
-        //}
-
-        //[Association]
-        //public XPCollection<Ticket> TicketWatchers
-        //{
-        //    get
-        //    {
-        //        return GetCollection<Ticket>(nameof(TicketWatchers));
-        //    }
-        //}
     }
 }

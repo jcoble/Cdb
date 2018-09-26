@@ -27,8 +27,8 @@ namespace Cdb.Tickets.BusinessObjects
     [DefaultProperty("Client")]
     public class Ticket : XPObject
     {
-        Comment comment;
-        PermissionPolicyUser userReporter;
+        User assignee;
+        User reporter;
         DateTime sourceDate;
         DateTime reportDate;
         DateTime errorDate;
@@ -37,7 +37,6 @@ namespace Cdb.Tickets.BusinessObjects
         TicketState ticketState;
         Client client;
         TicketType ticketType;
-        //Person assignee;
 
         public Ticket(Session session) : base(session) { }
 
@@ -46,21 +45,15 @@ namespace Cdb.Tickets.BusinessObjects
             base.AfterConstruction();
             ReportDate = DateTime.Now;
             //userReporter = Session.GetObjectByKey<PermissionPolicyUser>(SecuritySystem.CurrentUser);
-            userReporter = Session.FindObject<PermissionPolicyUser>(new BinaryOperator("UserName", SecuritySystem.CurrentUserName));
+            reporter = Session.FindObject<User>(new BinaryOperator("UserName", SecuritySystem.CurrentUserName));
         }
 
-        
-        public PermissionPolicyUser UserReporter
+
+        public User Reporter
         {
-            get => userReporter;
-            set => SetPropertyValue(nameof(UserReporter), ref userReporter, value);
+            get => reporter;
+            set => SetPropertyValue(nameof(Reporter), ref reporter, value);
         }
-        //[Association("Person-TicketReporter")]
-        //public Person Reporter
-        //{
-        //    get => reporter;
-        //    set => SetPropertyValue(nameof(Reporter), ref reporter, value);
-        //}
 
         [Association("TicketType-Tickets")]
         public TicketType TicketType
@@ -114,21 +107,22 @@ namespace Cdb.Tickets.BusinessObjects
             set => SetPropertyValue(nameof(SourceDate), ref sourceDate, value);
         }
 
-        //[Association("Person-TicketAssignee")]
-        //public Person Assignee
-        //{
-        //    get => assignee;
-        //    set => SetPropertyValue(nameof(Assignee), ref assignee, value);
-        //}
 
-        //[Association]
-        //public XPCollection<Person> Watchers
-        //{
-        //    get
-        //    {
-        //        return GetCollection<Person>(nameof(Watchers));
-        //    }
-        //}
+        public User Assignee
+        {
+            get => assignee;
+            set => SetPropertyValue(nameof(Assignee), ref assignee, value);
+        }
+
+
+        [Association("TicketWatchers-Watchers")]
+        public XPCollection<User> Watchers
+        {
+            get
+            {
+                return GetCollection<User>(nameof(Watchers));
+            }
+        }
 
         [Association("Ticket-Comments"), DevExpress.Xpo.Aggregated]
         public XPCollection<Comment> Comments
@@ -139,22 +133,8 @@ namespace Cdb.Tickets.BusinessObjects
             }
         }
     }
-
     public interface IPerson
     {
         Person Person { get; set; }
     }
-    //public interface ITicketType
-    //{
-    //    TicketType Type { get; set; }
-    //}
-
-    ////[DomainComponent]
-    //public interface IPriority 
-    //{
-    //    Priority PriorityName { get; set; }
-    //}
-
-
-
 }
