@@ -1,5 +1,5 @@
-﻿namespace Cdb.Module {
-	partial class CdbModule {
+﻿namespace Cdb.Notifications {
+	partial class NotificationsModule {
 		/// <summary> 
 		/// Required designer variable.
 		/// </summary>
@@ -24,14 +24,10 @@
 		/// </summary>
 		private void InitializeComponent() {
             // 
-            // CdbModule
+            // NotificationsModule
             // 
-            this.AdditionalExportedTypes.Add(typeof(DevExpress.Persistent.BaseImpl.ModelDifference));
-            this.AdditionalExportedTypes.Add(typeof(DevExpress.Persistent.BaseImpl.ModelDifferenceAspect));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.SystemModule.SystemModule));
-            this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Validation.ValidationModule));
             this.RequiredModuleTypes.Add(typeof(Cdb.Tickets.TicketsModule));
-            this.RequiredModuleTypes.Add(typeof(Cdb.Notifications.NotificationsModule));
 
 		}
 

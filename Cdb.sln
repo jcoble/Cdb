@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cdb.Win", "Cdb.Win\Cdb.Win.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cdb.Tickets", "Cdb.Tickets\Cdb.Tickets.csproj", "{A269E5C1-BFD4-44AB-A503-3E9A7A6410B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cdb.Notifications", "Cdb.Notifications\Cdb.Notifications.csproj", "{AE136547-0E14-436B-9FBE-426288F7E888}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,12 @@ Global
 		{A269E5C1-BFD4-44AB-A503-3E9A7A6410B3}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
 		{A269E5C1-BFD4-44AB-A503-3E9A7A6410B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A269E5C1-BFD4-44AB-A503-3E9A7A6410B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE136547-0E14-436B-9FBE-426288F7E888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE136547-0E14-436B-9FBE-426288F7E888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE136547-0E14-436B-9FBE-426288F7E888}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{AE136547-0E14-436B-9FBE-426288F7E888}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{AE136547-0E14-436B-9FBE-426288F7E888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE136547-0E14-436B-9FBE-426288F7E888}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
